@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://AlvarezJaimeR:mBL6QzZhxrnHWxDI@cluster0.japv5.mongodb.net/petFinder?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://AlvarezJaimeR:mBL6QzZhxrnHWxDI@cluster0.japv5.mongodb.net/petFinder?retryWrites=true&w=majority",
+    "jwtSecret":"The Super Secret Password"
 }
