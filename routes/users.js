@@ -55,6 +55,26 @@ router.post("/", async (req, res) => {
       } catch (ex) {
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }
-})
+});
+
+//update a user's credentials 
+router.put("/:userId", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) return res.status(400).send(`The user id ${req.params.userId} does not exist.`);
+
+        if (req.body.firstName != null) {
+            user.firstName = req.body.firstName;
+          }
+          if (req.body.lastName != null) {
+            user.lastName = req.body.lastName;
+          }
+      
+          await user.save();
+          return res.send(user);
+        } catch (ex) {
+          return res.status(500).send(`Internal Server Error: ${ex}`);
+    }
+});
 
 module.exports = router;
